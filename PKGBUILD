@@ -1,7 +1,7 @@
 # Maintainer: Aru Sahni <aru@arusahni.net>
 pkgname=dbus-executor
 pkgver=0.1.0
-pkgrel=1
+pkgrel=2
 epoch=
 pkgdesc="Launch arbitrary programs via D-Bus."
 arch=('x86_64')
@@ -39,5 +39,5 @@ package() {
     # Random metadata file created by cargo. See https://github.com/rust-lang/cargo/issues/6797
     rm "${pkgdir}"/usr/.crates.toml "${pkgdir}"/usr/.crates2.json
     sed -i 's|^Exec=.*|Exec=/usr/bin/dbus-executor|' "${srcdir}/${pkgname}-${pkgver}/net.arusahni.dbusexecutor.service"
-    install -D -m644 "${srcdir}/${pkgname}-${pkgver}/net.arusahni.dbusexecutor.service" "${pkgdir}/usr/share/dbus-1/net.arusahni.dbusexecutor.service"
+    install -D -m644 "${srcdir}/${pkgname}-${pkgver}/net.arusahni.dbusexecutor.service" "${pkgdir}/usr/share/dbus-1/services/net.arusahni.dbusexecutor.service"
 }
